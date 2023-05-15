@@ -1,0 +1,18 @@
+{
+  "name": "calendar",
+  "version": "1.0.0",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "nw ."
+  },
+  "dependencies": {
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
+    "nw": "^0.76.0",
+    "nwdc": "^1.0.1"
+  },
+  "chromium-args": "--enable-logging=stderr",
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Générateur de Planning</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h2 class="header-title">Générateur de Planning</h2>
+        <div class="header-buttons">
+            <button id="settings-button" class="header-button"><img src="assets/settings_icone.png" alt="Settings"></button>
+            <button id="pdf-button" class="header-button"><img src="assets/pdf_icone.png" alt="PDF"></button>
+        </div>
+    </div>
+    <div class="body">
+        <div class="menu">
+            <form class="menu-form" id="formationData">
+                <h1 class="menu-title">Identité Apprenti</h1>
+                <input type="text" id="name" placeholder="Nom" class="formationData-content">
+                <input type="text" id="firstname" placeholder="Prénom" class="formationData-content">
+
+                <h1 class ="menu-title">Formation</h1>
+                <h1 class="menu-subtitle">Type de Formation:</h1>
+                <select id="formation-type-select" class="formationData-select"></select>
+                <h1 class="menu-subtitle">Jour de Formation:</h1>
+                <select id="formation-day-select" class="formationData-select"></select>
+                <h1 class="menu-subtitle">Date de Début:</h1>
+                <input type="date" id="dateInput" class="formationData-content">
+
+                <button id="generate-button" class="generate-button">Générer</button>
+            </form>
+            <div class="menu-color-picker">
+                <h1 class="menu-title">Palette de Couleurs</h1>
+                <div id="menu-list-colors" class="menu-list-colors">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div id="calendar" class="calendar">
+                <div class="calendar-header">
+                    <h1 id="year-header" class="calendar-title">En attente d'informations...</h1>
+                </div>
+                <div id="calendar-body" class="calendar-body">
+                </div>
+                <div id="calendar-feet" class="calendar-feet">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="node_modules/jspdf/dist/jspdf.min.js"></script>
+    <script src="node_modules/html2canvas/dist/html2canvas.min.js"></script>
+    <script type="module" src="script.mjs"></script>
+</body>
+</html>
