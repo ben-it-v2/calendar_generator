@@ -1,12 +1,54 @@
+# Install git
+$gitCommand = Get-Command git -ErrorAction SilentlyContinue
+if ($gitCommand) {
+    # Git already installed
+    Write-Host "Git is installed. Version: $gitVersion"
+} else {
+    # Git need to be installed
+    Write-Host "Git isn't installed."
+
+    # Create Git folder
+    New-Item -Path $env:USERPROFILE -Name "Git" -ItemType "directory"
+    $gitDir = "$env:USERPROFILE/Git"
+
+    # Download git zip file from official github repository
+    $url = "https://github.com/git-for-windows/git/releases/download/v2.40.1.windows.1/PortableGit-2.40.1-64-bit.7z.exe"
+    $zipFile =  "$gitDir/PortableGit-2.40.1-64-bit.7z.exe"
+    Invoke-WebRequest -UseBasicParsing $url -OutFile $zipFile
+    Write-Host "Git ZIP path: $zipFile"
+
+    # Unzip Git archive
+    Expand-Archive $zipFile -DestinationPath $gitDir
+    Write-Host "Git unzipping path: $gitDir"
+
+    # Removing zip file
+    Remove-Item $zipFile
+    Write-Host "Git removing zip file"
+
+    # Setup Git environment variable
+    # Verify if Git directory is already in PATH variable
+    $userPath = [Environment]::GetEnvironmentVariable("PATH", "User")
+    $existingPath = [Environment]::GetEnvironmentVariable("PATH", "Machine") + ";$userPath"
+    if ($existingPath -notlike "*$gitDir\cmd*") {
+        # Git directory isn't in PATH variable 
+        [Environment]::SetEnvironmentVariable("PATH", "$userPath;$gitDir\cmd", "User")
+        Write-Host "Git added to PATH variable of the current User"
+    } else {
+        # Git directory is in PATH variable
+        Write-Host "Git already exists in PATH variable (Machine or User context)"
+    }
+}
+
+# Install Nodejs
 $nodeVersion = node -v
 if ($nodeVersion) {
     # Nodejs already installed
     Write-Host "Node.js is installed. Version: $nodeVersion"
 } else {
     # Nodejs need to be installed
-    # Create nodejs directory
+    Write-Host "Node.js isn't installed."
+
     $nodeDir = "$env:USERPROFILE/nodejs"
-    # New-Item -ItemType Directory -Path $nodeDir
     Write-Host "Node.js directory will be: $nodeDir"
 
     # Download nodejs zip file from nodejs website
