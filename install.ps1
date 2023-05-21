@@ -2,7 +2,8 @@
 $gitCommand = Get-Command git -ErrorAction SilentlyContinue
 if ($gitCommand) {
     # Git already installed
-    Write-Host "Git is installed. Version: $gitVersion"
+    Write-Host "Git is installed. Version:"
+    git -v
 } else {
     # Git need to be installed
     Write-Host "Git isn't installed."
@@ -12,8 +13,8 @@ if ($gitCommand) {
     $gitDir = "$env:USERPROFILE/Git"
 
     # Download git zip file from official github repository
-    $url = "https://github.com/git-for-windows/git/releases/download/v2.40.1.windows.1/PortableGit-2.40.1-64-bit.7z.exe"
-    $zipFile =  "$gitDir/PortableGit-2.40.1-64-bit.7z.exe"
+    $url = "https://github.com/git-for-windows/git/releases/download/v2.40.1.windows.1/MinGit-2.40.1-64-bit.zip"
+    $zipFile =  "$gitDir/MinGit-2.40.1-64-bit.zip"
     Invoke-WebRequest -UseBasicParsing $url -OutFile $zipFile
     Write-Host "Git ZIP path: $zipFile"
 
@@ -40,10 +41,11 @@ if ($gitCommand) {
 }
 
 # Install Nodejs
-$nodeVersion = node -v
-if ($nodeVersion) {
+$nodeCommand = Get-Command node -ErrorAction SilentlyContinue
+if ($nodeCommand) {
     # Nodejs already installed
-    Write-Host "Node.js is installed. Version: $nodeVersion"
+    Write-Host "Node.js is installed. Version:"
+    node -v
 } else {
     # Nodejs need to be installed
     Write-Host "Node.js isn't installed."
