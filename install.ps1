@@ -85,3 +85,4 @@ if ($nodeCommand) {
         Write-Host "Node.js already exists in PATH variable (Machine or User context)"
     }
 }
+npm install
