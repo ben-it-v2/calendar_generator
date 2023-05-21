@@ -1,2 +1,2 @@
-REM START "" update.bat
+start "" update.bat
 npx nwdc .
