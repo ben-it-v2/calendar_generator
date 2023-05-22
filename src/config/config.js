@@ -53,12 +53,13 @@ class Config {
         .catch(error => {
             console.error(error);
             console.log(`Config init: ${path}`);
+            let conf = this;
             fs.writeFile(`src/${path}`, this.defaultValues.get(path), function(err) {
                 if(err)
                     alert(err);
                 else {
                     console.log(`Config initialized: ${path}`);
-                    this.readJSONFile(path, callback);
+                    conf.readJSONFile(path, callback);
                 }
             });
         });
