@@ -15,6 +15,7 @@ This script automatically checks if there is an update, then it starts the appli
 
 # Settings
 Settings storage is located to ``project_root/src/config/*.json``.
+<br>
 -> TIPS : It's easier to manage all the settings from the settings manager of the application.
 
 # Generate a PDF
