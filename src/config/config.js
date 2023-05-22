@@ -66,12 +66,12 @@ class Config {
     }
 
     saveMapToJSONFile(map, mapname) {
-        const path = `config/${mapname}.json`;
+        const path = `src/config/${mapname}.json`;
         fs.exists(path, function(exists) {
             if (exists) {
                 var obj = Object.fromEntries(map);
                 var str = JSON.stringify(obj);
-                fs.writeFileSync(`config/${mapname}.json`, str);
+                fs.writeFileSync(path, str);
             } else
                 console.error("saveMapToJSONFile", map, mapname);
         });
