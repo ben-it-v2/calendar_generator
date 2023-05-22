@@ -47,7 +47,7 @@ class Month {
             const dateStr = `${this.beginMonth.getDate()}/${this.beginMonth.getMonth() + 1}`;
             if (appConfig.holidays.has(dateStr)) {
                 dayWidget.setHoliday();
-            } else if (appConfig.closingdays.has(dateStr)) {
+            } else if (appConfig.closingdays.has(`${dateStr}/${this.beginMonth.getFullYear()}`)) {
                 dayWidget.setClosingDay();
             } else if (beginDate <= this.beginMonth && this.formationDay == this.beginMonth.getDay()) {
                 if (this.calendarObj.integration < 2) {

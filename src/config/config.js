@@ -5,7 +5,7 @@ class Config {
         // Fill default values
         this.defaultValues = new Map([
             ["./config/days.json", `[{"value": 1, "text": "Lundi"},{"value": 2, "text": "Mardi"},{"value": 3, "text": "Mercredi"},{"value": 4, "text": "Jeudi"},{"value": 5, "text": "Vendredi"}]`],
-            ["./config/closingdays.json", `{"7/8":true,"8/8":true,"9/8":true,"10/8":true,"11/8":true,"12/8":true,"13/8":true,"14/8":true,"16/8":true,"17/8":true,"18/8":true,"26/12":true,"27/12":true,"28/12":true,"29/12":true}`],
+            ["./config/closingdays.json", `{"7/8/2023":true,"8/8/2023":true,"9/8/2023":true,"10/8/2023":true,"11/8/2023":true,"12/8/2023":true,"13/8/2023":true,"14/8/2023":true,"16/8/2023":true,"17/8/2023":true,"18/8/2023":true,"26/12/2023":true,"27/12/2023":true,"28/12/2023":true,"29/12/2023":true}`],
             ["./config/formations.json", `{"MUM":"Manager d'Unité Marchande","CPEB":"Chef de Projet E-Business","CC":"Conseiller Commercial","MA":"Manage d'Affaires","CUI":"Cuisinier","SER":"Serveur en Restauration","AMUM":"Assistant Manager d'Unité Marchande","CV":"Conseil de Vente","NTC":"Négociateur Technico Commercial","AR":"Agent de Restauration","EC":"Employé Commercial","AC":"Assistant Commercial","RH":"Réceptionniste en Hotellerie"}`],
             ["./config/holidays.json", `{"1/1":true,"9/4":true,"10/4":true,"1/5":true,"8/5":true,"18/5":true,"29/5":true,"14/7":true,"15/8":true,"1/11":true,"11/11":true,"25/12":true,"31/12":true}`],
         ]);

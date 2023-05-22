@@ -589,7 +589,7 @@ function openSettingsMenu() {
         validateButton.disabled = true;
         validateButton.onclick = function() {
             let date = new Date(inputDate.value);
-            let key = `${date.getDate()}/${date.getMonth() + 1}`;
+            let key = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
             if (appConfig.addElement(appConfig.closingdays, "closingdays", key, true)) {
                 /* Append the new formation type to the settings list */
                 addElementToList(closingDaysElements.listBody, key, true, onDeleteClosingDay);
