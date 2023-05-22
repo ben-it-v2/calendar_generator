@@ -57,13 +57,13 @@ class Month {
                     dayWidget.setFormationDay();
                 }
             }
+            this.days[y] = dayWidget;
             this.beginMonth.setDate(this.beginMonth.getDate() + 1);
             if (curMonth != this.beginMonth.getMonth()) {
                 dayWidget.setLastDay();
                 this.nbSpacers = (31 - y);
                 break;
             }
-            this.days[y] = dayWidget;
         }
 
         // Add spacers before month total hours
