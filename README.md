@@ -1,5 +1,5 @@
 # Calendar Generator
-Projet de Générateur de Planning pour l'entreprise IDMN
+Project of Calendar Generator for the purposes of IDMN OF - CFA.
 
 # Installation
 - Git v2.40.1
