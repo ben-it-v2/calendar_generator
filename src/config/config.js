@@ -56,8 +56,10 @@ class Config {
             fs.writeFile(`src/${path}`, this.defaultValues.get(path), function(err) {
                 if(err)
                     alert(err);
-                else
+                else {
                     console.log(`Config initialized: ${path}`);
+                    this.readJSONFile(path, callback);
+                }
             });
         });
     }
