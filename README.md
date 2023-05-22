@@ -11,7 +11,6 @@ This script checks if ``git`` and ``node`` commands are avaible on the system. I
 # Run
 To start the application, you have to run the script ``run.bat``.
 This script automatically checks if there is an update, then it starts the application.
-<br\>
 -> TIPS : Create a shortcut of script ``run.bat``.
 
 # Settings
