@@ -40,6 +40,9 @@ if ($gitCommand) {
     }
 }
 
+# Starts a new instance of powershell to load new PATH variables and initialize git repository
+Invoke-Expression 'cmd /c start powershell -Command { ./git_init.ps1 }'
+
 # Install Nodejs
 $nodeCommand = Get-Command node -ErrorAction SilentlyContinue
 if ($nodeCommand) {
