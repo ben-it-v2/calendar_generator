@@ -10,7 +10,7 @@ This script checks if ``git`` and ``node`` commands are avaible on the system. I
 Then, script automatically setup Git repository if needed and install npm packages.
 Finally, it creates a shortcut named ``Generateur Planning`` on the user desktop.
 <br>
--> TIPS : If shortcut wasn't created, create a shortcut  of ``run.bat`` file.
+-> TIPS : If shortcut doesn't appear on user desktop, you can create a shortcut of ``run.bat`` file.
 
 # Run
 To start the software, double-click on the shortcut ``Generateur Planning`` located on the user desktop.
