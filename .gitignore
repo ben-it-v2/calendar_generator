@@ -1,6 +1,3 @@
 node_modules/
 package-lock.json
 src/config/*.json
-./git_init.ps1
-./install.ps1
-./install.bat
