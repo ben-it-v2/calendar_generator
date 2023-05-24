@@ -95,10 +95,10 @@ Invoke-Expression 'cmd /c start powershell -Command { npm install; sleep 3 }'
 # Create a shortcut on user desktop
 $userDesktop = [Environment]::GetFolderPath("Desktop")
 $curFolder = Get-Location
-$curFolder = "$curFolder\run.bat"
 
 $WScriptObj = New-Object -ComObject ("WScript.Shell")
 $ShortcutPath = "$userDesktop/Calendar.lnk"
 $ShortcutObj = $WscriptObj.CreateShortcut($ShortcutPath)
-$ShortcutObj.TargetPath = $curFolder
+$ShortcutObj.TargetPath = "$curFolder\run.bat"
+$ShortcutObj.WorkingDirectory = "$curFolder"
 $ShortcutObj.Save()
