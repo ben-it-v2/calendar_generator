@@ -7,13 +7,14 @@ Project of Calendar Generator for the purposes of IDMN OF - CFA.
 
 The requirements can be installed by running the script ``install.bat``.
 This script checks if ``git`` and ``node`` commands are avaible on the system. If isn't, it installs and setups the requirements.
-Finally, script automatically setup Git repository if needed and install npm packages.
+Then, script automatically setup Git repository if needed and install npm packages.
+Finally, it creates a shortcut named ``Generateur Planning`` on the user desktop.
+<br>
+-> TIPS : If shortcut wasn't created, create a shortcut  of ``run.bat`` file.
 
 # Run
-To start the application, you have to run the script ``run.bat``.
+To start the software, double-click on the shortcut ``Generateur Planning`` located on the user desktop.
 This script automatically checks if there is an update, then it starts the software.
-<br>
--> TIPS : Create a shortcut of script ``run.bat``.
 
 # Settings
 Settings storage is located to ``project_root/src/config/*.json``.
