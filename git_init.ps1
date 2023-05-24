@@ -7,6 +7,8 @@ if ($isGitRepo -eq "true") {
     # Setup Git Repository to give access to software updates
     git init
     git remote add origin https://github.com/ben-it-v2/calendar_generator.git
+    git clean -df
+    git checkout master
     git pull origin master
 }
 sleep 3
