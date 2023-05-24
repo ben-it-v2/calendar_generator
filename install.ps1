@@ -99,5 +99,6 @@ $curFolder = Get-Location
 $WScriptObj = New-Object -ComObject ("WScript.Shell")
 $ShortcutPath = "$userDesktop/Calendar.lnk"
 $ShortcutObj = $WscriptObj.CreateShortcut($ShortcutPath)
-$ShortcutObj.TargetPath = "$curFolder\run.bat"
+$ShortcutObj.TargetPath = "cmd"
+$ShortcutObj.Arguments = "/c ""$curFolder\run.bat"""
 $ShortcutObj.Save()
