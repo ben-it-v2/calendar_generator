@@ -85,4 +85,6 @@ if ($nodeCommand) {
         Write-Host "Node.js already exists in PATH variable (Machine or User context)"
     }
 }
-npm install
+
+# Starts a new instance of powershell to load new PATH variables and install package dependencies
+Invoke-Expression 'cmd /c start powershell -Command { npm install; sleep 3 }'
