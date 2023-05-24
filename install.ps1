@@ -97,7 +97,7 @@ $userDesktop = [Environment]::GetFolderPath("Desktop")
 $curFolder = Get-Location
 
 $WScriptObj = New-Object -ComObject ("WScript.Shell")
-$ShortcutPath = "$userDesktop/Calendar.lnk"
+$ShortcutPath = "$userDesktop/Generateur Planning.lnk"
 $ShortcutObj = $WscriptObj.CreateShortcut($ShortcutPath)
 $ShortcutObj.TargetPath = "$curFolder\run.bat"
 $ShortcutObj.WorkingDirectory = "$curFolder"
